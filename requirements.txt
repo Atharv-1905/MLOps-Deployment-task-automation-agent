@@ -1,0 +1,4 @@
+# Libraries required to run the application.
+streamlit>=1.40.0
+openai>=1.60.0
+ddgs>=9.0.0

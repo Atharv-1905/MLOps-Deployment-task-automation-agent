@@ -1,0 +1,6 @@
+# Ignore secrets, environments, and generated Python files.
+.env
+.venv/
+__pycache__/
+*.pyc
+.streamlit/secrets.toml
