@@ -34,6 +34,11 @@ def summarize(topic, search_results):
     # Summarize the retrieved information using the Groq API.
     api_key = os.getenv("GROQ_API_KEY")
     if not api_key:
+        try:
+            api_key = st.secrets["GROQ_API_KEY"]
+        except (KeyError, FileNotFoundError):
+            api_key = None
+    if not api_key:
         raise ValueError("GROQ_API_KEY is not configured.")
 
     client = OpenAI(
